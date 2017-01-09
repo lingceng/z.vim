@@ -1,0 +1,20 @@
+*z.txt*	Plugin for jumping to the mosted used directories in vim.
+
+Author:  Lingceng <http://blog.lingceng.io/>
+
+|z-introduction|            Introduction
+|z-usage|                   Usage
+
+INTRODUCTION					*z-introduction* *z.vim* *z*
+
+This plugin make vim work with [z](https://github.com/rupa/z)
+Help jumping to the mosted used directories in vim.
+
+USAGE					*z-usage*
+
+						*Z*
+:Z {name}	The only global command.  Invokes "Z {name}" and open the most used directories in a new tab. Rename the tab name if Taboo plugin installed.
+
+
+
+
