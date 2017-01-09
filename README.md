@@ -1,7 +1,7 @@
 # z.vim
 
 This plugin make vim work with [z](https://github.com/rupa/z)
-Hekp jumping to the most used directories in vim.
+Help jumping to the most used directories in vim.
 
 ## Installation
 

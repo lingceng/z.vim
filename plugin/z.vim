@@ -6,6 +6,9 @@ let g:loaded_zvim = 1
 function! Z(cmd)
   let list = readfile(expand('~/.z'))
   call filter(list, 'v:val =~ "'.a:cmd.'"')
+  if len(list) <= 0
+    return 1
+  endif
   let max = sort(l:list, {a, b -> split(b, '|')[1] - split(a, '|')[1] })[0]
   let path = split(l:max, '|')[0]
   execute "tabe " . l:path
