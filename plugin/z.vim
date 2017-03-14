@@ -7,19 +7,22 @@ function! ZSortByFrequency(a, b)
   return split(a:b, '|')[1] - split(a:a, '|')[1]
 endfunction
 
-function! Z(cmd)
+function! Z(keyword, command)
   let list = readfile(expand('~/.z'))
-  call filter(list, 'v:val =~ "'.a:cmd.'"')
+  call filter(list, 'v:val =~ "'.a:keyword.'"')
   if len(list) <= 0
     return 1
   endif
   let max = sort(l:list, 'ZSortByFrequency')[0]
   let path = split(l:max, '|')[0]
-  execute "tabe " . l:path
+
+  execute a:command . " " . l:path
   execute "lcd " . l:path
   if exists(":TabooRename")
-    execute "TabooRename " . a:cmd
+    execute "TabooRename " . a:keyword
   endif
 endfunction
-command! -nargs=+ -complete=command Z call Z(<q-args>)
+
+command! -nargs=+ -complete=command Z call Z(<q-args>, 'tabe')
+command! -nargs=+ -complete=command Zc call Z(<q-args>, 'e')
 
