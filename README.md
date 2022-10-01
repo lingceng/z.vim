@@ -20,6 +20,7 @@ Do following to open the folder:
     :Z nice
 
 ## Version
+(0.2) Add Zc usage.
 (0.1) Avoid using lambda, so that plugin works on older Vim versions.
 
 ## License
